@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { pageMetadata } from "@/lib/metadata";
-import Section from "@/components/Section";
 import GetStartedForm from "@/components/GetStartedForm";
 
 export const metadata: Metadata = pageMetadata({
@@ -12,20 +11,24 @@ export const metadata: Metadata = pageMetadata({
 
 export default function GetStartedPage() {
   return (
-    <Section>
-      <div className="mx-auto max-w-2xl text-center">
-        <h1 className="font-heading text-4xl font-bold text-brand-dark sm:text-5xl">
-          Start protecting your brand today.
-        </h1>
-        <p className="mt-4 text-brand-dark">
-          Tell us a bit about what you want monitored, and we&apos;ll set up
-          your first scan.
+    <div className="bg-brand-dark py-16 text-brand-white">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p className="text-xs font-semibold uppercase tracking-wide text-brand-cream/70">
+          — Get Started
         </p>
-      </div>
+        <h1 className="mt-3 font-heading text-4xl font-bold sm:text-5xl">
+          Start protecting your brand{" "}
+          <span className="italic text-brand-cream">today.</span>
+        </h1>
+        <p className="mt-4 max-w-xl text-brand-cream/90">
+          Tell us what to monitor, then complete secure checkout. It takes
+          about two minutes.
+        </p>
 
-      <Suspense fallback={null}>
-        <GetStartedForm />
-      </Suspense>
-    </Section>
+        <Suspense fallback={null}>
+          <GetStartedForm />
+        </Suspense>
+      </div>
+    </div>
   );
 }
