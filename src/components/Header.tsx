@@ -3,12 +3,10 @@ import Image from "next/image";
 import Container from "./Container";
 
 const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/brand-owners/", label: "Brand Owners" },
   { href: "/law-firms/", label: "Law Firms" },
-  { href: "/how-it-works/", label: "How It Works" },
-  { href: "/pricing/", label: "Pricing" },
-  { href: "/faq/", label: "FAQ" },
-  { href: "/blog/", label: "Blog" },
+  { href: "/pricing/", label: "Pricing Plans" },
   { href: "/contact/", label: "Contact" },
 ];
 
@@ -40,9 +38,9 @@ export default function Header() {
           </nav>
           <Link
             href="/get-started/"
-            className="rounded-md bg-brand-primary px-4 py-2 text-sm font-semibold text-brand-white hover:bg-brand-dark"
+            className="rounded-md bg-brand-magenta px-4 py-2 text-sm font-semibold text-brand-white hover:bg-brand-accent"
           >
-            Get Started
+            Get Started →
           </Link>
         </div>
       </Container>

@@ -4,9 +4,11 @@ import { pageMetadata } from "@/lib/metadata";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import CTA from "@/components/CTA";
-import PricingCard from "@/components/PricingCard";
+import PlansDark from "@/components/PlansDark";
 import FeatureTable from "@/components/FeatureTable";
 import HowItWorksSteps from "@/components/HowItWorksSteps";
+import ScanSection from "@/components/ScanSection";
+import WeeklyReportMockup from "@/components/WeeklyReportMockup";
 import Testimonials from "@/components/Testimonials";
 import TeamSection from "@/components/TeamSection";
 
@@ -27,21 +29,24 @@ export default function HomePage() {
               Trademark · Copyright · IP Protection
             </p>
             <h1 className="mt-3 font-heading text-4xl font-bold text-brand-dark sm:text-5xl">
-              Your 24/7 AI-Powered IP Guardian
+              Your 24/7 AI-Powered <span className="text-brand-primary italic">IP Guardian</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-brand-dark lg:mx-0">
               We scan marketplaces, social platforms, domains, and the open
-              web for threats to your brand, then tell you exactly what to do
-              and take action to stop it.
+              web — then tell you exactly what threatens your brand and take
+              action to stop it. Not just alerts. Answers.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
-              <Button href="/get-started/">Protect My Brand</Button>
+              <Button href="/get-started/">Protect My Brand →</Button>
               <Button href="/how-it-works/" variant="secondary">
                 See How It Works
               </Button>
             </div>
             <p className="mt-6 text-sm font-semibold text-brand-primary">
               2,000+ brands protected
+            </p>
+            <p className="mt-1 text-sm italic text-brand-dark/70">
+              We act on your behalf
             </p>
           </div>
           <div>
@@ -57,55 +62,14 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section>
-        <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          Plans
-        </h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <PricingCard
-            name="Watch"
-            price="$149 / mo per mark"
-            description="Know the moment your brand is copied. Weekly reports plus immediate alerts for urgent issues."
-            features={[
-              "Marketplace, social, and domain monitoring",
-              "Weekly report + urgent alerts",
-              "Plain-English verdict on every alert",
-            ]}
-            ctaHref="/get-started/?plan=watch"
-            ctaLabel="Start with Watch"
-          />
-          <PricingCard
-            name="Watch + Enforce"
-            price="$199 / mo per mark"
-            description="Everything in Watch, plus we draft enforcement letters and submit takedowns once you approve."
-            features={[
-              "Everything in Watch",
-              "Enforcement letter drafting",
-              "Takedown submission",
-              "Priority support",
-            ]}
-            ctaHref="/get-started/?plan=enforce"
-            ctaLabel="Start with Watch + Enforce"
-            highlighted
-          />
-          <PricingCard
-            name="For Law Firms"
-            price="Custom pricing"
-            description="White-label monitoring for law firms and IP practices, with volume pricing for your portfolio."
-            features={[
-              "Multi-client dashboard",
-              "Volume pricing",
-              "White-label reporting",
-            ]}
-            ctaHref="/book-a-demo/"
-            ctaLabel="Book a Demo"
-          />
-        </div>
-      </Section>
+      <PlansDark />
 
       <Section>
-        <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          How We Compare
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-primary">
+          — How We Compare
+        </p>
+        <h2 className="mt-3 text-center font-heading text-3xl font-bold text-brand-dark">
+          More complete than the alternatives, at a fraction of the cost.
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-brand-dark">
           The only platform that monitors, interprets, and enforces — so you
@@ -117,17 +81,34 @@ export default function HomePage() {
       </Section>
 
       <Section>
-        <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          Here&apos;s How It Works
-        </h2>
-        <div className="mt-10">
-          <HowItWorksSteps />
+        <ScanSection />
+      </Section>
+
+      <Section>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <WeeklyReportMockup />
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">
+              — Your Weekly Report
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-brand-dark">
+              See the threat. Choose your action.
+            </h2>
+            <p className="mt-4 text-brand-dark">
+              Every alert comes with a clear choice and a recommended next
+              step, so you can act in minutes instead of hours — or hand the
+              work to us entirely.
+            </p>
+            <div className="mt-8">
+              <HowItWorksSteps />
+            </div>
+          </div>
         </div>
       </Section>
 
       <Section>
         <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          They Love How Effortless It Is
+          Trusted by brand owners who&apos;d rather not think about this
         </h2>
         <div className="mt-10">
           <Testimonials />

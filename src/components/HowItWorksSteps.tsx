@@ -23,7 +23,7 @@ const STEPS = [
 
 export default function HowItWorksSteps() {
   return (
-    <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <ol className="grid gap-8 sm:grid-cols-2">
       {STEPS.map((step, index) => (
         <li key={step.title}>
           <span className="font-heading text-sm font-bold text-brand-magenta">
