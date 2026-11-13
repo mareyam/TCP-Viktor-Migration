@@ -5,89 +5,121 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import ProcessSteps from "@/components/ProcessSteps";
 import FAQList from "@/components/FAQList";
+import SavingsCalculator from "@/components/SavingsCalculator";
 
 export const metadata: Metadata = pageMetadata({
   title: "Brand Owners",
   description:
-    "Everywhere counterfeiters and infringers target your brand, we're watching: marketplaces, social media, domains, and the open web.",
+    "Your brand is being copied right now. Here's how we find it across every channel and shut it down before it costs you.",
   path: "/brand-owners/",
 });
 
-const PROTECTION_AREAS = [
+const COPY_METHODS = [
   {
-    title: "Marketplaces",
-    detail: "Amazon, Etsy, eBay, TikTok Shop, Temu, Walmart, and Alibaba.",
-    cadence: "Weekly scan",
-  },
-  {
-    title: "Social media",
-    detail: "Instagram, TikTok, Facebook, X, YouTube, LinkedIn, and Pinterest.",
-    cadence: "7 platforms",
-  },
-  {
-    title: "Domains",
+    title: "Trademark conflicts",
     detail:
-      ".com, .net, .org, country codes, new extensions, and typosquats.",
-    cadence: "1,000+ TLDs, daily",
+      "Someone files a mark that looks or sounds like yours. You typically have a short opposition window to act, and missing it can mean losing your recourse entirely.",
+    tags: "Lookalike filings · fake stores · copycats",
   },
   {
-    title: "Visual content",
+    title: "Counterfeits & listing hijacks",
     detail:
-      "Product photos, brand logos, ad creatives, videos, and AI training data.",
-    cadence: "Visual fingerprinting",
+      "Fake products sold under your brand name, your product photos lifted into counterfeit listings, and third-party sellers piggybacking on your listings with inferior goods.",
+    tags: "Amazon · Etsy · eBay · TikTok Shop · Temu",
   },
   {
-    title: "Paid advertising",
+    title: "Fake accounts & impersonation",
     detail:
-      "Google Search, Google Shopping, Meta Ads, TikTok Ads, and brand keyword bidding.",
-    cadence: "All major ad networks",
+      "Social accounts using your name and logo to run scams, sell counterfeits, or deceive your customers, often for months before anyone notices.",
+    tags: "Instagram · TikTok · Facebook · X · YouTube",
+  },
+  {
+    title: "Stolen content & domain squatting",
+    detail:
+      "Your images, copy, and brand assets reused without permission on competitor sites and in AI training sets, plus your brand name registered as a domain before you need it.",
+    tags: "1,000+ domains · open web · AI datasets",
   },
 ];
 
-const WANTS = [
-  "Stop losing revenue to counterfeits",
-  "Know your trademark is secure",
-  "Have someone else deal with infringers",
-  "See what's happening globally",
-  "Catch fake social accounts early",
-  "Only hear about what matters",
+const COVERAGE = [
+  { title: "Websites", detail: "Fake stores, copycat sites, lookalike domains", cadence: "Weekly scan" },
+  { title: "Marketplaces", detail: "Amazon, Etsy, eBay, TikTok Shop, Temu, Walmart", cadence: "7 platforms" },
+  { title: "Social media", detail: "Instagram, TikTok, Facebook, X, YouTube", cadence: "7 platforms" },
+  { title: "Domains", detail: ".com, .net, .org, country codes, typosquats", cadence: "1,000+ TLDs, daily" },
+  { title: "Images & content", detail: "Product photos, logos, ad creatives, video", cadence: "Visual fingerprinting" },
+  { title: "Paid ads", detail: "Google Search, Google Shopping, Meta, TikTok", cadence: "All major ad networks" },
+];
+
+const OUTCOMES = [
+  {
+    title: "Stop losing revenue to counterfeits",
+    detail:
+      "Every fake product sold under your name is money you'll never recover. We find and flag counterfeit listings every week, across every major marketplace.",
+  },
+  {
+    title: "Know your trademark is secure",
+    detail:
+      "Trademark maintenance has strict deadlines. We track every one and alert you months in advance, no surprises.",
+  },
+  {
+    title: "Have someone else deal with infringers",
+    detail:
+      "Sending letters and filing takedowns isn't why you started a business. Approve our recommendation and we handle every step.",
+  },
+  {
+    title: "See what's happening globally",
+    detail:
+      "Competitors file lookalike marks abroad, squatters register your name in foreign domains. We cover all of it.",
+  },
+  {
+    title: "Catch fake social accounts early",
+    detail:
+      "Impersonation accounts can run for months before you notice. Early detection makes all the difference.",
+  },
+  {
+    title: "Only hear about what matters",
+    detail:
+      "Not every similar domain is a real threat. We separate genuine risks from noise so you only deal with what counts.",
+  },
 ];
 
 const STEPS = [
   {
     title: "We name the source",
-    description: "Every threat is traced to exactly where it's coming from.",
+    description:
+      "Every alert specifies exactly where it was found, not a vague description.",
   },
   {
     title: "We explain the risk",
     description:
-      "A plain-English read on how serious it is and why it matters.",
+      "A plain-English read on whether it's serious, worth watching, or safe to ignore.",
   },
   {
     title: "We prepare the response",
-    description: "The letter, takedown, or filing is drafted and ready.",
+    description: "The filing, letter, or takedown notice, drafted and ready.",
   },
   {
     title: "You approve, we execute",
-    description: "One click and we handle the rest from there.",
+    description:
+      "One click to approve. We submit, follow up, and confirm resolution.",
   },
 ];
 
 const FAQS = [
   {
-    question: "How is this different from a trademark watch service?",
+    question: "Do I need a registered trademark to use TCP?",
     answer:
-      "A basic watch service tells you about new USPTO filings. We monitor marketplaces, social platforms, domains, visual content, and paid ads too, and we tell you what to do about each threat, not just that it exists.",
+      "No, we can monitor a brand name or mark even before registration is complete.",
   },
   {
-    question: "Do I need a lawyer to use this?",
+    question: "What does \"we act on your behalf\" mean exactly?",
     answer:
-      "No. Most alerts can be handled with the templates we provide, or by approving the action and letting us submit it for you. For anything that needs a licensed attorney, we can connect you with one.",
+      "Once you approve a recommended action, we send the letter, submit the takedown, or file the complaint ourselves, and follow up until it's resolved.",
   },
   {
-    question: "What happens after I approve an action?",
+    question: "How is this different from Amazon Brand Registry?",
     answer:
-      "We send the letter, file the takedown, or submit the marketplace complaint, then follow up and keep you updated until the case is resolved.",
+      "Brand Registry only covers Amazon. We monitor marketplaces, social platforms, domains, paid ads, and the open web, all in one place, with a recommendation on every alert.",
   },
 ];
 
@@ -95,65 +127,114 @@ export default function BrandOwnersPage() {
   return (
     <>
       <Section>
-        <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-wide text-brand-magenta">
-            For Brand Owners · Trademark · Copyright · IP
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-cream px-3 py-1 text-xs font-semibold text-brand-primary">
+              For Brand Owners · Trademark · Copyright · IP
+            </p>
+            <h1 className="mt-4 font-heading text-4xl font-bold text-brand-dark sm:text-5xl">
+              Your brand is being{" "}
+              <span className="text-brand-primary italic">copied right now.</span>
+            </h1>
+            <p className="mt-2 font-heading text-2xl font-bold text-brand-dark">
+              Here&apos;s how we stop it.
+            </p>
+            <p className="mt-4 text-brand-dark">
+              Fake accounts, counterfeit listings, lookalike trademarks, stolen
+              content. We monitor every place your brand lives, and shut
+              threats down before they become expensive problems.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href="/get-started/">Protect My Brand →</Button>
+              <Button href="/weekly-brand-protection/" variant="secondary">
+                See a Sample Report
+              </Button>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-6 text-sm font-medium text-brand-dark">
+              <span>✓ We act on your behalf</span>
+              <span>✓ Plain English, always</span>
+            </div>
+          </div>
+          <Image
+            src="/images/home_hero-768x512.png"
+            alt="Brand protection dashboard"
+            width={768}
+            height={512}
+            className="w-full rounded-lg"
+          />
+        </div>
+      </Section>
+
+      <div className="bg-brand-dark py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">
+            — What We Protect You From
           </p>
-          <h1 className="mt-3 font-heading text-4xl font-bold text-brand-dark sm:text-5xl">
-            Your brand, watched everywhere it can be copied.
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-brand-dark">
-            Counterfeiters and infringers don&apos;t stick to one channel, so
-            neither do we. We cover marketplaces, social platforms, domains,
-            and the open web, every single week.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button href="/get-started/">Protect My Brand →</Button>
-            <Button href="/pricing/" variant="secondary">
-              See Pricing
-            </Button>
+          <h2 className="mt-3 font-heading text-3xl font-bold text-brand-white">
+            Four ways your brand gets copied.{" "}
+            <span className="italic text-brand-cream">We stop all of them.</span>
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {COPY_METHODS.map((method) => (
+              <div
+                key={method.title}
+                className="rounded-lg border border-brand-white/10 bg-brand-primary/20 p-6"
+              >
+                <h3 className="font-heading text-lg font-bold text-brand-white">
+                  {method.title}
+                </h3>
+                <p className="mt-2 text-sm text-brand-cream/90">
+                  {method.detail}
+                </p>
+                <p className="mt-4 border-t border-brand-white/10 pt-3 text-xs text-brand-cream/70">
+                  {method.tags}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </Section>
+      </div>
+
+      <div className="bg-brand-primary py-10 text-brand-white">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide">
+            — Every Place We Monitor, Every Week
+          </p>
+          <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            {COVERAGE.map((item) => (
+              <div key={item.title}>
+                <p className="font-heading font-bold">{item.title}</p>
+                <p className="mt-1 text-xs text-brand-cream/80">
+                  {item.detail}
+                </p>
+                <p className="mt-2 text-xs font-semibold uppercase">
+                  {item.cadence}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <Section>
-        <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          What we protect you from
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-primary">
+          — What Brand Owners Actually Want
+        </p>
+        <h2 className="mt-3 text-center font-heading text-3xl font-bold text-brand-dark">
+          Not more alerts.{" "}
+          <span className="text-brand-primary italic">Real outcomes.</span>
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-brand-dark">
-          Every place infringers target your brand, checked on a schedule.
+          Built around what brand owners tell us they actually need, not a
+          feature checklist.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROTECTION_AREAS.map((area) => (
-            <div
-              key={area.title}
-              className="rounded-lg border border-brand-primary/15 bg-brand-cream p-6"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">
-                {area.cadence}
-              </p>
-              <h3 className="mt-2 font-heading text-lg font-bold text-brand-dark">
-                {area.title}
+          {OUTCOMES.map((outcome) => (
+            <div key={outcome.title}>
+              <h3 className="font-heading font-bold text-brand-dark">
+                {outcome.title}
               </h3>
-              <p className="mt-2 text-sm text-brand-dark">{area.detail}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          What brand owners actually want
-        </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {WANTS.map((want) => (
-            <div
-              key={want}
-              className="rounded-lg border border-brand-primary/15 bg-brand-white p-6"
-            >
-              <p className="font-heading font-semibold text-brand-dark">
-                {want}
-              </p>
+              <p className="mt-2 text-sm text-brand-dark">{outcome.detail}</p>
             </div>
           ))}
         </div>
@@ -173,12 +254,12 @@ export default function BrandOwnersPage() {
               — Your Weekly Report
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-brand-dark">
-              One report. Every threat, already sorted.
+              One report, every threat, every action ready to go.
             </h2>
             <p className="mt-4 text-brand-dark">
-              Each week you get a single report that names every threat,
-              scores how serious it is, and tells you exactly what we&apos;d
-              recommend doing next.
+              Every item names exactly where it was found, what it means for
+              your brand, and what we recommend. No guesswork, no legal
+              jargon.
             </p>
             <div className="mt-8">
               <ProcessSteps steps={STEPS} />
@@ -188,8 +269,20 @@ export default function BrandOwnersPage() {
       </Section>
 
       <Section>
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-primary">
+          — The Cost Comparison
+        </p>
+        <h2 className="mt-3 text-center font-heading text-3xl font-bold text-brand-dark">
+          Calculate your estimated savings.
+        </h2>
+        <div className="mt-10">
+          <SavingsCalculator />
+        </div>
+      </Section>
+
+      <Section>
         <h2 className="text-center font-heading text-3xl font-bold text-brand-dark">
-          Common questions
+          Everything you need to know
         </h2>
         <div className="mt-10">
           <FAQList items={FAQS} />
@@ -199,10 +292,11 @@ export default function BrandOwnersPage() {
       <Section>
         <div className="rounded-lg bg-brand-dark px-6 py-12 text-center sm:px-12">
           <h2 className="font-heading text-2xl font-bold text-brand-white sm:text-3xl">
-            Start protecting your brand today
+            Start today
           </h2>
           <p className="mt-3 text-brand-cream">
-            Plans start at $149/month per mark, with no setup fees.
+            Plans start at $149/month per mark. Save 20% with annual billing.
+            Cancel anytime.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Button href="/get-started/">Get Started →</Button>
