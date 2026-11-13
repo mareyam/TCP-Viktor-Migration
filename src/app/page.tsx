@@ -5,10 +5,10 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import CTA from "@/components/CTA";
 import PlansDark from "@/components/PlansDark";
-import FeatureTable from "@/components/FeatureTable";
+import ComparisonBars from "@/components/ComparisonBars";
+import FeatureCardsGrid from "@/components/FeatureCardsGrid";
 import HowItWorksSteps from "@/components/HowItWorksSteps";
 import ScanSection from "@/components/ScanSection";
-import WeeklyReportMockup from "@/components/WeeklyReportMockup";
 import Testimonials from "@/components/Testimonials";
 import TeamSection from "@/components/TeamSection";
 
@@ -76,7 +76,23 @@ export default function HomePage() {
           never have to guess what an alert means or what to do next.
         </p>
         <div className="mt-10">
-          <FeatureTable />
+          <ComparisonBars />
+        </div>
+      </Section>
+
+      <Section>
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-primary">
+          — Everything Included
+        </p>
+        <h2 className="mt-3 text-center font-heading text-3xl font-bold text-brand-dark">
+          One platform, complete protection.
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-brand-dark">
+          Every tool you need to monitor, manage, and enforce your trademark
+          and IP rights, all in one place.
+        </p>
+        <div className="mt-10">
+          <FeatureCardsGrid />
         </div>
       </Section>
 
@@ -86,7 +102,13 @@ export default function HomePage() {
 
       <Section>
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          <WeeklyReportMockup />
+          <Image
+            src="/images/weekly-report-mockup-tcp.png"
+            alt="Weekly brand protection report"
+            width={960}
+            height={720}
+            className="w-full rounded-lg border border-brand-primary/10"
+          />
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">
               — Your Weekly Report
@@ -115,9 +137,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section>
-        <TeamSection />
-      </Section>
+      <TeamSection />
 
       <CTA />
     </>
