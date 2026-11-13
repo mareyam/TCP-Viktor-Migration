@@ -121,6 +121,16 @@ const FAQS = [
     answer:
       "Brand Registry only covers Amazon. We monitor marketplaces, social platforms, domains, paid ads, and the open web, all in one place, with a recommendation on every alert.",
   },
+  {
+    question: "How quickly do you respond to urgent threats?",
+    answer:
+      "Urgent threats trigger an immediate alert outside the regular weekly cycle, and our support team responds within hours, not days.",
+  },
+  {
+    question: "Can you monitor my product images and creative content?",
+    answer:
+      "Yes. We use visual fingerprinting to catch unauthorized use of your product photos, logos, ad creatives, and video across competitor sites and other sources.",
+  },
 ];
 
 export default function BrandOwnersPage() {
