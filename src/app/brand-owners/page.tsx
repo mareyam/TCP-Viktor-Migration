@@ -131,6 +131,11 @@ const FAQS = [
     answer:
       "Yes. We use visual fingerprinting to catch unauthorized use of your product photos, logos, ad creatives, and video across competitor sites and other sources.",
   },
+  {
+    question: "What if I disagree with your recommendation?",
+    answer:
+      "Nothing is sent or filed without your approval. If you'd rather take a different approach, you can pick from the alternative options or handle it yourself using the provided template.",
+  },
 ];
 
 export default function BrandOwnersPage() {
@@ -299,23 +304,51 @@ export default function BrandOwnersPage() {
         </div>
       </Section>
 
-      <Section>
-        <div className="rounded-lg bg-brand-dark px-6 py-12 text-center sm:px-12">
-          <h2 className="font-heading text-2xl font-bold text-brand-white sm:text-3xl">
-            Start today
-          </h2>
-          <p className="mt-3 text-brand-cream">
-            Plans start at $149/month per mark. Save 20% with annual billing.
-            Cancel anytime.
+      <div className="bg-brand-dark py-16 text-center text-brand-white">
+        <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-cream/70">
+            — Start Today
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Button href="/get-started/">Get Started →</Button>
-            <Button href="/pricing/" variant="secondary">
-              View Pricing
-            </Button>
+          <h2 className="mt-3 font-heading text-3xl font-bold sm:text-4xl">
+            Your brand deserves{" "}
+            <span className="italic text-brand-cream">real protection.</span>
+          </h2>
+          <p className="mt-4 text-brand-cream/90">
+            Join brand owners who&apos;ve replaced slow, expensive attorney
+            monitoring with complete IP protection that actually takes
+            action.
+          </p>
+          <div className="mt-8 rounded-lg border border-brand-cream/20 bg-brand-primary p-8">
+            <p className="font-heading text-4xl font-bold">
+              $149
+              <span className="text-base font-normal text-brand-cream/80">
+                {" "}
+                / month per mark
+              </span>
+            </p>
+            <p className="mt-1 text-xs text-brand-cream/80">
+              Save 20% with annual billing · Cancel anytime
+            </p>
+            <ul className="mt-6 space-y-2 text-left text-sm text-brand-cream">
+              <li>— Global platform monitoring</li>
+              <li>— Amazon, Etsy, eBay, TikTok Shop, Temu monitoring</li>
+              <li>— Instagram, TikTok, Facebook, X, YouTube watch</li>
+              <li>— 1,000+ domains scanned daily</li>
+              <li>— Image and copyright content monitoring</li>
+              <li>— Plain-English verdict on every alert</li>
+              <li>— Active enforcement on your behalf, included</li>
+            </ul>
+            <div className="mt-8">
+              <Button href="/get-started/" variant="secondary">
+                Protect my brand today →
+              </Button>
+            </div>
           </div>
+          <p className="mt-4 text-sm text-brand-cream/70">
+            Questions first? Talk to our team, we respond within 2 hours.
+          </p>
         </div>
-      </Section>
+      </div>
     </>
   );
 }
