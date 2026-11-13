@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -38,6 +39,10 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <Script
+          src="https://confident-mastiff-102.convex.site/chat/widget.js?v=3"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
