@@ -22,6 +22,18 @@ const TESTIMONIALS = [
   },
 ];
 
+function Stars() {
+  return (
+    <div className="mb-3 flex gap-0.5 text-brand-magenta" aria-label="5 out of 5 stars">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <span key={i} aria-hidden="true">
+          ★
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function Testimonials() {
   return (
     <div className="grid gap-6 sm:grid-cols-3">
@@ -30,6 +42,7 @@ export default function Testimonials() {
           key={t.name}
           className="rounded-lg border border-brand-primary/20 bg-brand-white p-6"
         >
+          <Stars />
           <p className="text-sm italic text-brand-dark">&ldquo;{t.quote}&rdquo;</p>
           <footer className="mt-4 flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-primary text-xs font-semibold text-brand-white">
