@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Slab } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE_NAME, SITE_URL } from "@/lib/metadata";
 
-const roboto = Roboto({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-roboto",
+  variable: "--font-dm-sans",
 });
 
-const robotoSlab = Roboto_Slab({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-roboto-slab",
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-plus-jakarta-sans",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${robotoSlab.variable} antialiased`}>
+      <body className={`${dmSans.variable} ${plusJakartaSans.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

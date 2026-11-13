@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "./Container";
 
 const NAV_LINKS = [
@@ -16,11 +17,15 @@ export default function Header() {
     <header className="border-b border-brand-primary/10 bg-brand-white">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link
-            href="/"
-            className="font-heading text-lg font-bold text-brand-primary"
-          >
-            Trademark Copyright Protection
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo_trimmed-1024x612.png"
+              alt="Trademark Copyright Protection"
+              width={160}
+              height={96}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
             {NAV_LINKS.map((link) => (
