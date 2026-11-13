@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Section from "@/components/Section";
-import Button from "@/components/Button";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
@@ -66,10 +65,18 @@ export default function ContactPage() {
             className="mt-1 w-full rounded-md border border-brand-primary/20 bg-brand-white px-4 py-2 text-brand-dark focus:border-brand-primary focus:outline-none"
           />
         </div>
-        <Button href="#">Send Message</Button>
+        <button
+          type="button"
+          disabled
+          aria-disabled="true"
+          className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-md bg-brand-primary/40 px-5 py-3 text-sm font-semibold text-brand-white"
+        >
+          Send Message
+        </button>
         <p className="text-xs text-brand-dark/60">
-          This form is a placeholder for the migration foundation and isn&apos;t
-          wired up yet.
+          Message delivery isn&apos;t connected yet. This form is a
+          placeholder for the migration foundation; submitting it doesn&apos;t
+          send anything.
         </p>
       </form>
     </Section>

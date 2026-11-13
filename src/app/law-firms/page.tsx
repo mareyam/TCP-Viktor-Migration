@@ -476,13 +476,16 @@ export default function LawFirmsPage() {
               </div>
               <button
                 type="button"
-                className="w-full rounded-md bg-brand-primary px-5 py-3 text-sm font-semibold text-brand-white hover:bg-brand-dark"
+                disabled
+                aria-disabled="true"
+                className="w-full cursor-not-allowed rounded-md bg-brand-primary/40 px-5 py-3 text-sm font-semibold text-brand-white"
               >
                 Request a law-firm demo
               </button>
               <p className="text-xs text-brand-dark/60">
-                This form is a placeholder for the migration foundation and
-                isn&apos;t wired up yet.
+                Demo booking isn&apos;t connected yet. This form is a
+                placeholder for the migration foundation; submitting it
+                doesn&apos;t send a request anywhere.
               </p>
             </div>
           </form>

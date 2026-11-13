@@ -8,6 +8,8 @@ const PRODUCT_LINKS = [
   { href: "/law-firms/", label: "For Law Firms" },
   { href: "/how-it-works/", label: "How It Works" },
   { href: "/pricing/", label: "Pricing" },
+  { href: "/weekly-brand-protection/", label: "Weekly Brand Protection" },
+  { href: "/get-started/", label: "Get Started" },
   { href: "/book-a-demo/", label: "Book a Demo" },
   { href: "/contact/", label: "Contact" },
 ];
