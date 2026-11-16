@@ -57,9 +57,9 @@ const OUTCOMES = [
       "Every fake product sold under your name is money you'll never recover. We find and flag counterfeit listings every week, across every major marketplace.",
   },
   {
-    title: "Know your trademark is secure",
+    title: "Know what showed up this week",
     detail:
-      "Trademark maintenance has strict deadlines. We track every one and alert you months in advance, no surprises.",
+      "Each weekly report lists the online uses of your brand that were found, with a plain-English read on what to do next.",
   },
   {
     title: "Have someone else deal with infringers",
@@ -67,9 +67,9 @@ const OUTCOMES = [
       "Sending letters and filing takedowns isn't why you started a business. Approve our recommendation and we handle every step.",
   },
   {
-    title: "See what's happening globally",
+    title: "See online use across channels",
     detail:
-      "Competitors file lookalike marks abroad, squatters register your name in foreign domains. We cover all of it.",
+      "Marketplaces, social platforms, domains, and the open web are checked for uses of your brand.",
   },
   {
     title: "Catch fake social accounts early",
