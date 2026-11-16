@@ -10,9 +10,9 @@ const FEATURES = [
       "Every alert comes with a plain-English verdict — Act Now, Watch, or Ignore — plus a recommended next step. No legal jargon.",
   },
   {
-    title: "Deadline tracking",
+    title: "Time-sensitive alerts",
     description:
-      "Section 8, Section 9, renewals, and every other maintenance deadline, tracked automatically with reminders well ahead of time.",
+      "The weekly report calls out online listings, domains, and social accounts that need a decision soon, alongside the ones that can wait.",
   },
   {
     title: "Domain monitoring",
